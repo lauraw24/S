@@ -47,8 +47,6 @@
       var zahlInput = document.getElementById("zahlInput");
       var backButton = document.getElementById("backButton");
       var schuhschrankText = document.getElementById("schuhschrankText");
-      return;
-    }
     
     var enteredValue = parseFloat(zahlInput.value);
 
