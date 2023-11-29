@@ -32,12 +32,12 @@
     #schuhschrankText {
       display: none;
       font-size: 1.5px;
-      margin-top: 5px;
+      margin-top: 2px;
     }
   </style>
 </head>
 <body>
-  <input type="number" id="zahlInput" onkeydown="pruefeEnterTaste(event)">
+  <input type="text" id="zahlInput" onkeydown="pruefeEnterTaste(event)">
   <button id="backButton" onclick="zurueck()">Zurück</button>
   <div id="schuhschrankText">Siehe Schuhschrank</div>
 
