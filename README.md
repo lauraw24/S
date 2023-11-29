@@ -50,4 +50,24 @@
       if (zahlInput.value == 21) {
         zahlInput.style.display = "none";
         backButton.style.display = "block";
-        schuhschrankText.style.display
+        schuhschrankText.style.display = "block";
+      } else {
+        zahlInput.style.display = "block";
+        backButton.style.display = "none";
+        schuhschrankText.style.display = "none";
+      }
+    }
+
+    function zurueck() {
+      var zahlInput = document.getElementById("zahlInput");
+      var backButton = document.getElementById("backButton");
+      var schuhschrankText = document.getElementById("schuhschrankText");
+
+      zahlInput.value = "";
+      zahlInput.style.display = "block";
+      backButton.style.display = "none";
+      schuhschrankText.style.display = "none";
+    }
+  </script>
+</body>
+</html>
