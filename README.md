@@ -31,7 +31,7 @@
     }
     #schuhschrankText {
       display: none;
-      font-size: 12px;
+      font-size: 0,5px;
       margin-top: 5px;
     }
   </style>
@@ -53,6 +53,7 @@
         schuhschrankText.style.display = "block";
       } else {
         zahlInput.style.display = "block";
+        zahlInput.style.backgroundColor = "red";
         backButton.style.display = "none";
         schuhschrankText.style.display = "none";
       }
