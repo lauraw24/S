@@ -43,12 +43,14 @@
 
   <script>
   function pruefeEnterTaste(event) {
-    if (event.keyCode === 13) {
+    if (event.keyCode === 13 || zahlInput.value === "") {
       var zahlInput = document.getElementById("zahlInput");
       var backButton = document.getElementById("backButton");
       var schuhschrankText = document.getElementById("schuhschrankText");
-
-      var enteredValue = parseFloat(zahlInput.value);
+      return;
+    }
+    
+    var enteredValue = parseFloat(zahlInput.value);
 
       if (isNaN(enteredValue) || enteredValue !== Math.floor(enteredValue)) {
         // Wenn die Eingabe keine ganze Zahl ist
