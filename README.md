@@ -31,7 +31,7 @@
     }
     #schuhschrankText {
       display: none;
-      font-size: 0.5px;
+      font-size: 1.5px;
       margin-top: 5px;
     }
   </style>
@@ -42,19 +42,23 @@
   <div id="schuhschrankText">Siehe Schuhschrank</div>
 
   <script>
-    function pruefeEnterTaste(event) {
+  function pruefeEnterTaste(event) {
+    if (event.keyCode === 13) {
+      var zahlInput = document.getElementById("zahlInput");
+      var backButton = document.getElementById("backButton");
+      var schuhschrankText = document.getElementById("schuhschrankText");
 
-      if (event.keyCode === 13) {
-        var zahlInput = document.getElementById("zahlInput");
-        var backButton = document.getElementById("backButton");
-        var schuhschrankText = document.getElementById("schuhschrankText");
+      var enteredValue = parseFloat(zahlInput.value);
 
-        if (zahlInput.value === "" || isNaN(zahlInput.value)) {
-          zahlInput.style.backgroundColor = "white"; // Zurücksetzen auf weiße Hintergrundfarbe
-          backButton.style.display = "none";
-          schuhschrankText.style.display = "none";
-        } else if (zahlInput.value == 21) {
-          zahlInput.style.backgroundColor = "white"; // Zurücksetzen auf weiße Hintergrundfarbe
+      if (isNaN(enteredValue) || enteredValue !== Math.floor(enteredValue)) {
+        // Wenn die Eingabe keine ganze Zahl ist
+        zahlInput.style.backgroundColor = "red";
+        zahlInput.style.display = "block";
+        backButton.style.display = "none";
+        schuhschrankText.style.display = "none";
+      } else {
+        if (enteredValue === 21) {
+          zahlInput.style.backgroundColor = "white";
           zahlInput.style.display = "none";
           backButton.style.display = "block";
           schuhschrankText.style.display = "block";
@@ -66,23 +70,19 @@
         }
       }
     }
-  
+  }
 
-    function zurueck() {
-      var zahlInput = document.getElementById("zahlInput");
-      var backButton = document.getElementById("backButton");
-      var schuhschrankText = document.getElementById("schuhschrankText");
+  function zurueck() {
+    var zahlInput = document.getElementById("zahlInput");
+    var backButton = document.getElementById("backButton");
+    var schuhschrankText = document.getElementById("schuhschrankText");
 
-      zahlInput.value = "";
-      zahlInput.style.backgroundColor = "white"; // Zurücksetzen auf weiße Hintergrundfarbe
-      zahlInput.style.display = "block";
-      backButton.style.display = "none";
-      schuhschrankText.style.display = "none";
-    }
-
-    document.getElementById("zahlInput").addEventListener("input", function (event) {
-    event.preventDefault();
-  });
-  </script>
+    zahlInput.value = "";
+    zahlInput.style.backgroundColor = "white";
+    zahlInput.style.display = "block";
+    backButton.style.display = "none";
+    schuhschrankText.style.display = "none";
+  }
+</script>
 </body>
 </html>
