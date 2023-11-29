@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="UTF-8">
@@ -47,7 +46,12 @@
       var backButton = document.getElementById("backButton");
       var schuhschrankText = document.getElementById("schuhschrankText");
 
-      if (zahlInput.value == 21) {
+        if (zahlInput.value === "" || isNaN(zahlInput.value)) {
+        zahlInput.style.backgroundColor = "white"; 
+        backButton.style.display = "none";
+        schuhschrankText.style.display = "none";
+      } else if (zahlInput.value == 21) {
+        zahlInput.style.backgroundColor = "white";
         zahlInput.style.display = "none";
         backButton.style.display = "block";
         schuhschrankText.style.display = "block";
@@ -66,6 +70,7 @@
 
       zahlInput.value = "";
       zahlInput.style.display = "block";
+      zahlInput.style.backgroundColor = "white";
       backButton.style.display = "none";
       schuhschrankText.style.display = "none";
     }
