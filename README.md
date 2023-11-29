@@ -43,7 +43,7 @@
 
   <script>
   function pruefeEnterTaste(event) {
-    if (event.keyCode === 13 || zahlInput.value === "") {
+    if (event.keyCode !== 13 || zahlInput.value === "") {
       var zahlInput = document.getElementById("zahlInput");
       var backButton = document.getElementById("backButton");
       var schuhschrankText = document.getElementById("schuhschrankText");
