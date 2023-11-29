@@ -18,6 +18,7 @@
       padding: 10px;
       font-size: 16px;
       margin-bottom: 10px;
+      background-color: white; /* Hintergrundfarbe auf Weiß setzen */
     }
     #backButton {
       display: none;
@@ -30,36 +31,38 @@
     }
     #schuhschrankText {
       display: none;
-      font-size: 1px;
+      font-size: 12px;
       margin-top: 5px;
     }
   </style>
 </head>
 <body>
-  <input type="number" id="zahlInput" oninput="pruefeZahl()" onkeydown="return event.keyCode === 38 || event.keyCode === 40 ? false : true;"> 
+  <input type="number" id="zahlInput" onkeydown="pruefeEnterTaste(event)">
   <button id="backButton" onclick="zurueck()">Zurück</button>
   <div id="schuhschrankText">Siehe Schuhschrank</div>
 
   <script>
-    function pruefeZahl() {
-      var zahlInput = document.getElementById("zahlInput");
-      var backButton = document.getElementById("backButton");
-      var schuhschrankText = document.getElementById("schuhschrankText");
+    function pruefeEnterTaste(event) {
+      if (event.keyCode === 13) {
+        var zahlInput = document.getElementById("zahlInput");
+        var backButton = document.getElementById("backButton");
+        var schuhschrankText = document.getElementById("schuhschrankText");
 
         if (zahlInput.value === "" || isNaN(zahlInput.value)) {
-        zahlInput.style.backgroundColor = "white"; 
-        backButton.style.display = "none";
-        schuhschrankText.style.display = "none";
-      } else if (zahlInput.value == 21) {
-        zahlInput.style.backgroundColor = "white";
-        zahlInput.style.display = "none";
-        backButton.style.display = "block";
-        schuhschrankText.style.display = "block";
-      } else {
-        zahlInput.style.display = "block";
-        zahlInput.style.backgroundColor = "red";
-        backButton.style.display = "none";
-        schuhschrankText.style.display = "none";
+          zahlInput.style.backgroundColor = "white"; // Zurücksetzen auf weiße Hintergrundfarbe
+          backButton.style.display = "none";
+          schuhschrankText.style.display = "none";
+        } else if (zahlInput.value == 21) {
+          zahlInput.style.backgroundColor = "white"; // Zurücksetzen auf weiße Hintergrundfarbe
+          zahlInput.style.display = "none";
+          backButton.style.display = "block";
+          schuhschrankText.style.display = "block";
+        } else {
+          zahlInput.style.backgroundColor = "red";
+          zahlInput.style.display = "block";
+          backButton.style.display = "none";
+          schuhschrankText.style.display = "none";
+        }
       }
     }
 
@@ -69,8 +72,8 @@
       var schuhschrankText = document.getElementById("schuhschrankText");
 
       zahlInput.value = "";
+      zahlInput.style.backgroundColor = "white"; // Zurücksetzen auf weiße Hintergrundfarbe
       zahlInput.style.display = "block";
-      zahlInput.style.backgroundColor = "white";
       backButton.style.display = "none";
       schuhschrankText.style.display = "none";
     }
