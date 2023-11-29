@@ -1,4 +1,3 @@
-# website-s2
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -31,6 +30,7 @@
       cursor: pointer;
     }
     #schuhschrankText {
+      display: none;
       font-size: 12px;
       margin-top: 5px;
     }
@@ -45,24 +45,9 @@
     function pruefeZahl() {
       var zahlInput = document.getElementById("zahlInput");
       var backButton = document.getElementById("backButton");
+      var schuhschrankText = document.getElementById("schuhschrankText");
 
-      if (zahlInput.value != 21) {
-        zahlInput.style.backgroundColor = "red";
-        backButton.style.display = "none";
-      } else {
-        zahlInput.style.backgroundColor = "";
+      if (zahlInput.value == 21) {
+        zahlInput.style.display = "none";
         backButton.style.display = "block";
-      }
-    }
-
-    function zurueck() {
-      var zahlInput = document.getElementById("zahlInput");
-      var backButton = document.getElementById("backButton");
-
-      zahlInput.value = "";
-      zahlInput.style.backgroundColor = "";
-      backButton.style.display = "none";
-    }
-  </script>
-</body>
-</html>
+        schuhschrankText.style.display
