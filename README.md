@@ -18,7 +18,7 @@
       padding: 10px;
       font-size: 16px;
       margin-bottom: 10px;
-      background-color: white; /* Hintergrundfarbe auf Weiß setzen */
+      background-color: white; 
     }
     #backButton {
       display: none;
@@ -43,8 +43,7 @@
 
   <script>
     function pruefeEnterTaste(event) {
-var arrowKeys = [37, 38, 39, 40];
-      
+
       if (event.keyCode === 13) {
         var zahlInput = document.getElementById("zahlInput");
         var backButton = document.getElementById("backButton");
@@ -65,8 +64,7 @@ var arrowKeys = [37, 38, 39, 40];
           backButton.style.display = "none";
           schuhschrankText.style.display = "none";
         }
-      }else if (arrowKeys.includes(event.keyCode)) {
-      event.preventDefault();
+      }
     }
   
 
@@ -81,6 +79,10 @@ var arrowKeys = [37, 38, 39, 40];
       backButton.style.display = "none";
       schuhschrankText.style.display = "none";
     }
+
+    document.getElementById("zahlInput").addEventListener("input", function (event) {
+    event.preventDefault();
+  });
   </script>
 </body>
 </html>
