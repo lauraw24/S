@@ -36,7 +36,7 @@
   </style>
 </head>
 <body>
-  <input type="number" id="zahlInput" oninput="pruefeZahl()">
+  <input type="number" id="zahlInput" oninput="pruefeZahl()" onkeydown="return event.keyCode === 13 ? false : true;">
   <button id="backButton" onclick="zurueck()">Zurück</button>
   <div id="schuhschrankText">Siehe Schuhschrank</div>
 
