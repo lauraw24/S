@@ -40,7 +40,7 @@
 <body>
   <input type="text" id="zahlInput" onkeydown="pruefeEnterTaste(event)">
   <button id="backButton" onclick="zurueck()">Zurück</button>
-  <div id="schuhschrankText">Siehe Schuhschrank</div>
+  <div id="schuhschrankText">Snowman - Sia 1:29</div>
 <script>
   function pruefeEnterTaste(event) {
     var zahlInput = document.getElementById("zahlInput");
@@ -61,7 +61,7 @@
       backButton.style.display = "none";
       schuhschrankText.style.display = "none";
     } else {
-      if (enteredValue === 21) {
+      if (enteredValue === 9) {
         zahlInput.style.backgroundColor = "white";
         zahlInput.style.display = "none";
         backButton.style.display = "block";
