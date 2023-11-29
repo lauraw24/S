@@ -66,4 +66,3 @@
   </script>
 </body>
 </html>
-![image](https://github.com/lauraw24/website-s2/assets/152393052/d155da9e-1472-4713-a640-51cb41b48ef4)
