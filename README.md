@@ -30,13 +30,13 @@
     }
     #schuhschrankText {
       display: none;
-      font-size: 0,5px;
+      font-size: 1px;
       margin-top: 5px;
     }
   </style>
 </head>
 <body>
-  <input type="number" id="zahlInput" oninput="pruefeZahl()" onkeydown="return event.keyCode === 13 ? false : true;">
+  <input type="number" id="zahlInput" oninput="pruefeZahl()" onkeydown="return event.keyCode === 38 || event.keyCode === 40 ? false : true;"> 
   <button id="backButton" onclick="zurueck()">Zurück</button>
   <div id="schuhschrankText">Siehe Schuhschrank</div>
 
