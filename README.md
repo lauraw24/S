@@ -43,7 +43,7 @@
 
   <script>
   function pruefeEnterTaste(event) {
-    if (event.keyCode !== 13 || zahlInput.value === "") {
+    if (event.keyCode === 13) {
       var zahlInput = document.getElementById("zahlInput");
       var backButton = document.getElementById("backButton");
       var schuhschrankText = document.getElementById("schuhschrankText");
@@ -51,7 +51,6 @@
     var enteredValue = parseFloat(zahlInput.value);
 
       if (isNaN(enteredValue) || enteredValue !== Math.floor(enteredValue)) {
-        // Wenn die Eingabe keine ganze Zahl ist
         zahlInput.style.backgroundColor = "red";
         zahlInput.style.display = "block";
         backButton.style.display = "none";
