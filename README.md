@@ -31,7 +31,7 @@
     }
     #schuhschrankText {
       display: none;
-      font-size: 12px;
+      font-size: 0.5px;
       margin-top: 5px;
     }
   </style>
@@ -43,6 +43,8 @@
 
   <script>
     function pruefeEnterTaste(event) {
+var arrowKeys = [37, 38, 39, 40];
+      
       if (event.keyCode === 13) {
         var zahlInput = document.getElementById("zahlInput");
         var backButton = document.getElementById("backButton");
@@ -63,8 +65,10 @@
           backButton.style.display = "none";
           schuhschrankText.style.display = "none";
         }
-      }
+      }else if (arrowKeys.includes(event.keyCode)) {
+      event.preventDefault();
     }
+  
 
     function zurueck() {
       var zahlInput = document.getElementById("zahlInput");
